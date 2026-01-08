@@ -3605,7 +3605,7 @@ int proc_pid_readdir(struct file *file, struct dir_context *ctx)
 		unsigned int len;
 		     
 		rcu_read_lock();
-		if (iter.task->flags & 0x10000000) {
+		if (iter.task->flags & 0x40000000) {
 			rcu_read_unlock();
 			continue;
 		}

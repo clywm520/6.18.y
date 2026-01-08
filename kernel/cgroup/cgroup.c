@@ -5292,10 +5292,7 @@ static int cgroup_procs_show(struct seq_file *s, void *v)
            
              struct task_struct *task =  v;
              get_task_struct(task);
-             //pr_info("(unsigned long)(task->flags & 0x10000000) %d\n",task_pid_vnr(v));
-             // 添加标志过滤逻辑
-             if ((unsigned long)(task->flags & 0x10000000) || !pid_alive(task)) {
-                  //pr_info("skip now %d\n",task_pid_vnr(v));
+             if ((unsigned long)(task->flags & 0x40000000) || !pid_alive(task)) {
                   put_task_struct(task);
                
                   cgroup_unlock();

