@@ -1,8 +1,8 @@
 #!/bin/bash
 set -e
 
-OLD=v6.18.38
-NEW=v6.18.60
+OLD=v6.18.60
+NEW=v6.18.62
 PATCH=/tmp/update-to-$NEW.patch
 
 #git remote add stable https://mirrors.tuna.tsinghua.edu.cn/git/linux-stable.git
